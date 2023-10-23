@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Subscription Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Subscription Calculator</h1>
+        <div class="input-container">
+            <input type="number" id="rechargeAmount" placeholder="Recharge Amount (in rupees)">
+            <span class="tooltip" title="Enter the recharge amount in rupees.">&#9432;</span>
+        </div>
+        <div class="input-container">
+            <input type="number" id="validityPeriod" placeholder="Validity Period (in days)">
+            <span class="tooltip" title="Enter the validity period in days.">&#9432;</span>
+        </div>
+        <div class="input-container">
+            <input type="checkbox" id="includeGST">
+            <label for="includeGST">Include GST (18%)</label>
+        </div>
+
+        <div class="button-container">
+            <button class="add-button" onclick="addPlanToCompare()">Add Plan to Compare</button>
+            <button class="clear-button" onclick="clearComparisonTable()">Clear Table</button>
+        </div>
+
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Rate</th>
+                <th>Periods</th>
+                <th>Cost Per Day</th>
+                <th>Cost Per Year</th>
+                <th>Cost Per Hour</th>
+            </tr>
+            <tbody id="planComparison"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
