@@ -125,6 +125,8 @@ tr:nth-child(even) {
     background-color: #f0f0f0;
 }
 
-.best-plan {
+tr.best-plan {
     background-color: #7dcea0; /* Light green color for the best plan */
+    color: #333; /* Adjust text color for best plan */
 }
+
