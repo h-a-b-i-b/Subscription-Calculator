@@ -44,3 +44,7 @@ Contributions are welcome! Feel free to fork the repository, make your changes, 
 
 ## 📜 License
 This project is open-source and licensed under the MIT License.
+
+## 📬 Contact
+💬 Have suggestions? Open an Issue  
+✨ Star the repo if you find it useful! ⭐
