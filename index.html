@@ -1,48 +1,74 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Subscription Calculator</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plan Comparator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
-
 <body>
     <div class="container">
-        <h1>Subscription Calculator</h1>
-        <div class="input-container">
-            <input type="number" id="rechargeAmount" placeholder="Recharge Amount (in rupees)">
-            <span class="tooltip" title="Enter the recharge amount in rupees.">&#9432;</span>
-        </div>
-        <div class="input-container">
-            <input type="number" id="validityPeriod" placeholder="Validity Period (in days)">
-            <span class="tooltip" title="Enter the validity period in days.">&#9432;</span>
-        </div>
-        <div class="input-container">
-            <input type="checkbox" id="includeGST">
-            <label for="includeGST">Include GST (18%)</label>
+        <h1>📊 Premium Plan Comparator</h1>
+        
+        <div class="input-group">
+            <label class="input-label">
+                <span>Recharge Amount (₹)</span>
+                <div class="tooltip" data-tooltip="Total recharge amount including any bonuses">
+                    <i data-feather="help-circle"></i>
+                </div>
+            </label>
+            <input type="number" id="rechargeAmount" class="input-field" placeholder="e.g. 299">
         </div>
 
-        <div class="button-container">
-            <button class="add-button" onclick="addPlanToCompare()">Add Plan to Compare</button>
-            <button class="clear-button" onclick="clearComparisonTable()">Clear Table</button>
+        <div class="input-group">
+            <label class="input-label">
+                <span>Validity Period (Days)</span>
+                <div class="tooltip" data-tooltip="Total duration in calendar days">
+                    <i data-feather="help-circle"></i>
+                </div>
+            </label>
+            <input type="number" id="validityPeriod" class="input-field" placeholder="e.g. 28">
         </div>
 
+        <div class="input-group">
+            <label class="input-label">
+                <input type="checkbox" id="includeGST">
+                Include 18% GST
+            </label>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="addPlanToCompare()">
+                <i data-feather="plus"></i>
+                Add Plan
+            </button>
+            <button class="btn btn-secondary" onclick="clearComparisonTable()">
+                <i data-feather="trash-2"></i>
+                Clear All
+            </button>
+        </div>
     </div>
 
     <div class="table-container">
         <table>
-            <tr>
-                <th>Rate</th>
-                <th>Periods</th>
-                <th>Cost Per Day</th>
-                <th>Cost Per Months</th>
-                <th>Cost Per Year</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Validity</th>
+                    <th>Daily Cost</th>
+                    <th>Monthly Cost</th>
+                    <th>Yearly Cost</th>
+                </tr>
+            </thead>
             <tbody id="planComparison"></tbody>
         </table>
     </div>
+
+    <script>
+        feather.replace();
+        // Add any additional initialization scripts here
+    </script>
     <script src="script.js"></script>
-
 </body>
-
 </html>
